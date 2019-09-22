@@ -4,7 +4,7 @@ class Article extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			isOpen: false
+			isOpen: this.props.defaultOpen
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
@@ -12,6 +12,9 @@ class Article extends React.Component{
 		this.setState({
 			isOpen: !this.state.isOpen
 		});
+	}
+	componentWillMount(){
+		
 	}
 	render(){
 		const article = this.props.article;
