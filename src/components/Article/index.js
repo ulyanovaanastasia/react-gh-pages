@@ -13,8 +13,8 @@ class Article extends React.Component{
 			isOpen: !this.state.isOpen
 		});
 	}
-	componentWillMount(){
-		
+	componentWillReceiveProps(nextProps){
+		if(nextProps.defaultOpen!==this.props.defaultOpen) this.setState({isOpen: nextProps.defaultOpen});
 	}
 	render(){
 		const article = this.props.article;
